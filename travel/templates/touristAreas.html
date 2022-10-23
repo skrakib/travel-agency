@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Tourist Areas {% endblock %}
+{% block list %}
+<li class="nav-item"style = "margin-left:35rem">
+  <button class ="btn-success btn-sm"  >
+  <a href="/addNewArea" style = "text-decoration: none; color :brown"><b>Add New Area</b></a>
+</button>
+</li>
+{% endblock %}
+{% block body %}
+<div style="padding:30px;">
+<ul>
+{% for i in areas %}
+<div class="card" style="width: 33%;float:left;">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title">Area Name: {{i.name}}</h5>
+      <b>Total Hotels: {{i.totalHotel}}</b>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+  </div>
+{% endfor %}
+</ul>
+</div>
+<hr>
+{% endblock %}

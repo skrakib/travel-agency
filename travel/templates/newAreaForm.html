@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}SBBK TRAVEL AGENCY {% endblock %}
+{% block body %}
+<div class="nav-item justify-content-center d-flex">
+   
+    <form action="newArea"enctype="multipart/form-data" method="POST" class="form-group col-xs-40 col-md-7"  style="background:wheat;margin: 16px 0;align-content: center;width:50%!important;padding:30px;border-radius: 10px;">
+        {% csrf_token %}
+        <label for="area_name">Tourist Area Name</label>
+        <input type="text" class="form-control" id="area_name" name = "name" placeholder="Tourist Area Name">
+
+        <label for="area_district">District</label>
+        <input type="text" class="form-control" id="area_district" name = "district" placeholder="District">
+
+        <label for="area_upazilla">Upazilla</label>
+        <input type="text" class="form-control" id="area_upazilla" name = "upazilla" placeholder="Upazilla">
+
+        <label for="area_distanceFromDhaka">Distance From Dhaka</label>
+        <input type="number" class="form-control" id="area_distanceFromDhaka" name = "distanceFromDhaka" placeholder="Distance From Dhaka">
+        <br>
+        <input type="file" name="image" accept=".jpg">
+        <br>
+      <div class="justify-content-center d-flex"><button type="submit" class="btn btn-primary">Submit</button></div>
+        
+    </form>
+</div>
+{% endblock %}
